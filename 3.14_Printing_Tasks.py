@@ -40,7 +40,7 @@ class Task:
         return currenttime - self.timestamp
 
 
-def simulation(numSeconds, pagesPerMinute):
+def simulation(numSeconds, pagesPerMinute, numStudent):
 
     labprinter = Printer(pagesPerMinute)
     printQueue = Queue()
@@ -48,7 +48,7 @@ def simulation(numSeconds, pagesPerMinute):
 
     for currentSecond in range(numSeconds):
 
-        if newPrintTask():
+        if newPrintTask(numStudent):
              task = Task(currentSecond)
              printQueue.enqueue(task)
 
@@ -62,12 +62,12 @@ def simulation(numSeconds, pagesPerMinute):
     averageWait = sum(waitingtimes)/len(waitingtimes)
     print("Average wait %6.2f secs %3d tasks remaining." % (averageWait, printQueue.size()))
     
-def newPrintTask():
-    num = randrange(1,181)
-    if num == 180:
+def newPrintTask(numStudent):
+    num = randrange(0, (1800//numStudent) + 1)
+    if num == 1800//numStudent:
         return True
     else:
         return False
 
 for i in range(10):
-    simulation(3600, 5)
+    simulation(3600, 40, 100)
