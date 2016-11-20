@@ -109,7 +109,7 @@ class UnorderedList:
 
         return "No item in this list"
 
-    def pop(self, index):
+    def pop(self, index=0):                     #index=0  기본값 설정
         current = self.head
         previous = None 
         count = 0
@@ -137,7 +137,7 @@ mylist.append(5)
 
 
 
-print(mylist.pop(3))
+print(mylist.pop())
 print(mylist.size())
 print(mylist.index(309))
 
