@@ -18,9 +18,9 @@ def baseConverter(decNumber, base):
 
     return baseNum
 
-print(baseConverter(25,8))
-print(baseConverter(256,16))
-print(baseConverter(26,26))
+print(baseConverter(17, 2))
+print(baseConverter(45,2))
+print(baseConverter(96,2))
 
 
 
