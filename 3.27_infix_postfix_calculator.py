@@ -114,7 +114,6 @@ def calculator(infixequa):
 
     
 print(calculator("3654847*235/54"))
-
         
                         
 
