@@ -1,4 +1,5 @@
 #3.11 Queue Abstract Data Type
+import time 
 class Queue:
     def __init__(self):
         self.items = []
@@ -15,15 +16,18 @@ class Queue:
     def dequeue(self):
         return self.items.pop()
 
-
 q = Queue()
-print(q.isEmpty())
-q.enqueue(4)
-q.enqueue('dog')
-q.enqueue(True)
-print(q.size())
-print(q.isEmpty())
-print(q.dequeue())
-print(q.size())
-q.enqueue('print')
-print(q.dequeue())
+t1 = time.time()
+for i in range(100000):
+    q.enqueue(i)
+t2 = time.time()
+
+t3 = time.time()
+for i in range(100000):
+    q.dequeue()
+t4 = time.time()
+
+t5 = t2-t1
+t6 = t4-t3
+
+print("Enqueue: %.7f, Dequeue: %.7f" % (t5, t6))
