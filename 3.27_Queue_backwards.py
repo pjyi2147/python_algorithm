@@ -18,12 +18,12 @@ class Queue:
     
 q = Queue()
 t1 = time.time()
-for i in range(100000):
+for i in range(200000):
     q.enqueue(i)
 t2 = time.time()
-
+print("Enqueue finished!")
 t3 = time.time()
-for i in range(100000):
+for i in range(200000):
     q.dequeue()
 t4 = time.time()
 
