@@ -115,6 +115,6 @@ def calculator(infixequa):
     
 print(calculator("3654847*235/54"))
         
-                        
+print(infix_postfix("3+2-1+2"))
 
     
